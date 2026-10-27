@@ -41,12 +41,13 @@ static listar(turma) {
     }
     else{
       lista = lista + "<tr><td>" +  turma[i].getNome() + ' </td> ' +
-       "<td>" + turma[i].media.toFixed(2) + "</td>" + ' </td> ' + "<td>"+ turma[i].estado + "</td></tr>" ;
+       "<td>" + turma[i].media.toFixed(2) + "</td>" + ' </td> ' + "<td>"+ turma[i].estado + 
+       "   <button"+" type="+"'text'"+" id="+"'altera-aluno'"+"onclick="+"'alterarNome()'" +">"+ "alterar nome" +"</button>" +"</td></tr>";
     }
 
     
   }
-  document.getElementById('alunos').innerHTML = lista;
+  document.getElementById('alunos').innerHTML = lista ;
 }
 
 static cadastrar() {
@@ -62,6 +63,10 @@ static cadastrar() {
   tabListar.classList.remove('active');
   tabCadastrar.classList.add('active');
   //document.getElementById("media").innerHTML = m;
+}
+
+static alterarNome(){
+    document.getElementById('altera-aluno').innerHTML = ""
 }
 
 }
