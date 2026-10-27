@@ -37,10 +37,10 @@ static listar(turma) {
   for (let i = 0; i < turma.length; i++) {
     if (turma[i].falta >4){
 
-      lista = lista + "<tr><td>" + turma[i].nome + ' </td> '+  "<td>" + turma[i].media.toFixed(2) + "</td>" +"<td>"+ turma[i].estado + "</td></tr>";
+      lista = lista + "<tr><td>" + turma[i].getNome() + ' </td> '+  "<td>" + turma[i].media.toFixed(2) + "</td>" +"<td>"+ turma[i].estado + "</td></tr>";
     }
     else{
-      lista = lista + "<tr><td>" +  turma[i].nome + ' </td> ' +
+      lista = lista + "<tr><td>" +  turma[i].getNome() + ' </td> ' +
        "<td>" + turma[i].media.toFixed(2) + "</td>" + ' </td> ' + "<td>"+ turma[i].estado + "</td></tr>" ;
     }
 
