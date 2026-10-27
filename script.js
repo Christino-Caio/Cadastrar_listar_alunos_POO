@@ -8,6 +8,7 @@ function salvar() {
   let a1 = new Aluno(nome, n1, n2, n3);
   let ff = Number(document.getElementById('falta').value);
   let m = a1.gerarMedia(n1, n2, n3);
+  a1.gerarEstado(m);
   a1.Faltou(ff);
   turma[turma.length] = a1;
   alert('aluno cadastrado');
@@ -25,14 +26,15 @@ function listar() {
   tabListar.classList.add('active');
   tabCadastrar.classList.remove('active');
   turma.sort((a, b) => a.nome.localeCompare(b.nome));
-  let lista = ' ';
+  let lista = '<table> <tr> <b><th>Nome</th>- <th>Media</th>- <th>Situação</th></b></tr>';
   for (let i = 0; i < turma.length; i++) {
     if (turma[i].falta >4){
 
-      lista = lista + turma[i].nome + ' - ' + turma[i].estado + '<br> ';
+      lista = lista + "<tr><td>" + turma[i].nome + ' </td> ' + turma[i].estado + "</tr>";
     }
     else{
-      lista = lista + turma[i].nome + ' - ' + turma[i].media + '<br> ';
+      lista = lista + "<tr><td>" +  turma[i].nome + ' </td> ' +
+       "<td>" + turma[i].media.toFixed(2) + "</td>" + ' </td> ' + turma[i].estado + "</tr>" ;
     }
 
     
