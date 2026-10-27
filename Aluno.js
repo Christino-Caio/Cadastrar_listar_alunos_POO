@@ -34,9 +34,10 @@ class Aluno {
     let fal = falta
     if (falta > 4) {
       est = 'Reprovado por falta';
+      this.estado = est;
+      this.falta = fal;
+      return est;
     }
-    this.estado = est;
-    this.falta = fal;
-    return est;
+    
   }
 } //fim da classe

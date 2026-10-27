@@ -26,15 +26,15 @@ function listar() {
   tabListar.classList.add('active');
   tabCadastrar.classList.remove('active');
   turma.sort((a, b) => a.nome.localeCompare(b.nome));
-  let lista = '<table> <tr> <b><th>Nome</th>- <th>Media</th>- <th>Situação</th></b></tr>';
+  let lista = '<table> <tr> <b><th>Nome</th> <th>Media</th> <th>Situação</th></b></tr>';
   for (let i = 0; i < turma.length; i++) {
     if (turma[i].falta >4){
 
-      lista = lista + "<tr><td>" + turma[i].nome + ' </td> ' + turma[i].estado + "</tr>";
+      lista = lista + "<tr><td>" + turma[i].nome + ' </td> '+  "<td>" + turma[i].media.toFixed(2) + "</td>" +"<td>"+ turma[i].estado + "</td></tr>";
     }
     else{
       lista = lista + "<tr><td>" +  turma[i].nome + ' </td> ' +
-       "<td>" + turma[i].media.toFixed(2) + "</td>" + ' </td> ' + turma[i].estado + "</tr>" ;
+       "<td>" + turma[i].media.toFixed(2) + "</td>" + ' </td> ' + "<td>"+ turma[i].estado + "</td></tr>" ;
     }
 
     
