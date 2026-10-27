@@ -23,9 +23,18 @@ function listar() {
   // Ajusta o conteúdo visível
   tabListar.classList.add('active');
   tabCadastrar.classList.remove('active');
+  turma.sort((a, b) => a.nome.localeCompare(b.nome));
   let lista = ' ';
   for (let i = 0; i < turma.length; i++) {
-    lista = lista + turma[i].nome + ' - ' + turma[i].media + '<br> ';
+    if (turma[i].falta >4){
+
+      lista = lista + turma[i].nome + ' - ' + turma[i].estado + '<br> ';
+    }
+    else{
+      lista = lista + turma[i].nome + ' - ' + turma[i].media + '<br> ';
+    }
+
+    
   }
   document.getElementById('alunos').innerHTML = lista;
 }
