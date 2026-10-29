@@ -65,8 +65,8 @@ static cadastrar() {
   //document.getElementById("media").innerHTML = m;
 }
 
-static alterarNome(){
+/*static alterarNome(){
     document.getElementById('altera-aluno').innerHTML = "<table> <tr> <b><th>Nome</th> <th>Media</th> <th>Situação</th></b></tr>"
-}
+} */
 
 }
