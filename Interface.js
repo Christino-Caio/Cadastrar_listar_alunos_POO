@@ -40,7 +40,8 @@ static listar(turma) {
   for (let i = 0; i < turma.length; i++) {
     if (turma[i].falta >4){
 
-      lista = lista + "<tr><td>" + turma[i].getNome() + ' </td> '+  "<td>" + turma[i].media.toFixed(2) + "</td>" +"<td>"+ turma[i].estado + "</td></tr>";
+      lista = lista + "<tr><td>" + turma[i].getNome() + ' </td> '+ 
+       "<td>" + turma[i].media.toFixed(2) + "</td>" +"<td>"+ turma[i].estado + "</td></tr>";
     }
     else{
       lista = lista + "<tr><td>" +  turma[i].getNome() + ' </td> ' +
@@ -48,7 +49,7 @@ static listar(turma) {
        
       lista = lista + "<button"+
       " type="+"'text'"+
-      " id="+"'altera-aluno"+"["+i+"]"+"'"+"onclick="+"'alterarNome()'" +">"+ "alterar nome" +"</button>" +"</td></tr>";
+      " id="+"'altera-aluno"+"["+i+"]"+"'"+"onclick="+"'mudarNome()'" +">"+ "alterar nome" +"</button>" +"</td></tr>";
     }
 
     
@@ -71,8 +72,11 @@ static cadastrar() {
   //document.getElementById("media").innerHTML = m;
 }
 
-/*static alterarNome(){
-    document.getElementById('altera-aluno[]').innerHTML = "<table> <tr> <b><th>Nome</th> <th>Media</th> <th>Situação</th></b></tr>"
-} */
+static alterarNome(){
+  for(let i=0; i<turma.length; i++){
+    document.getElementById("alterar-aluno["+i+"]").innerHTML = "255555"
+
+  }
+} 
 
 }

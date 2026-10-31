@@ -12,3 +12,8 @@ function botaoSalvar(){
 function cadastroAluno(){
     Interface.cadastrar();
 }
+
+function mudarNome(){
+    Interface.alterarNome();
+
+}
