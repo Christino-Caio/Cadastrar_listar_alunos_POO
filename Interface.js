@@ -20,6 +20,8 @@ static salvar() {
   alert('aluno cadastrado');
   return a1;
 }
+
+
 static listar(turma) {
   const btnCadastrar = document.getElementById('btn-cadastrar');
   const tabCadastrar = document.getElementById('tab-cadastrar');
@@ -29,10 +31,11 @@ static listar(turma) {
   btnListar.classList.add('active');
   btnCadastrar.classList.remove('active');
 
+
   // Ajusta o conteúdo visível
   tabListar.classList.add('active');
   tabCadastrar.classList.remove('active');
-  turma.sort((a, b) => a.nome.localeCompare(b.nome));
+  
   let lista = '<table> <tr> <b><th>Nome</th> <th>Media</th> <th>Situação</th></b></tr>';
   for (let i = 0; i < turma.length; i++) {
     if (turma[i].falta >4){
@@ -41,8 +44,11 @@ static listar(turma) {
     }
     else{
       lista = lista + "<tr><td>" +  turma[i].getNome() + ' </td> ' +
-       "<td>" + turma[i].media.toFixed(2) + "</td>" + ' </td> ' + "<td>"+ turma[i].estado + 
-       "   <button"+" type="+"'text'"+" id="+"'altera-aluno'"+"onclick="+"'alterarNome()'" +">"+ "alterar nome" +"</button>" +"</td></tr>";
+       "<td>" + turma[i].media.toFixed(2) + "</td>" + ' </td> ' + "<td>"+ turma[i].estado;
+       
+      lista = lista + "<button"+
+      " type="+"'text'"+
+      " id="+"'altera-aluno"+"["+i+"]"+"'"+"onclick="+"'alterarNome()'" +">"+ "alterar nome" +"</button>" +"</td></tr>";
     }
 
     
@@ -66,7 +72,7 @@ static cadastrar() {
 }
 
 /*static alterarNome(){
-    document.getElementById('altera-aluno').innerHTML = "<table> <tr> <b><th>Nome</th> <th>Media</th> <th>Situação</th></b></tr>"
+    document.getElementById('altera-aluno[]').innerHTML = "<table> <tr> <b><th>Nome</th> <th>Media</th> <th>Situação</th></b></tr>"
 } */
 
 }
