@@ -1,17 +1,17 @@
 class Aluno {
   #nome;
-  nota1;
-  nota2;
-  nota3;
+  #nota1;
+  #nota2;
+  #nota3;
   estado;
   media;
   falta;
   chamada;
   constructor(nome, nota1, nota2, nota3) {
     this.#nome = nome;
-    this.nota1 = nota1;
-    this.nota2 = nota2;
-    this.nota3 = nota3;
+    this.#nota1 = nota1;
+    this.#nota2 = nota2;
+    this.#nota3 = nota3;
   }
   gerarMedia(nota1, nota2, nota3) {
     let m = (nota1 + nota2 + nota3) / 3;
@@ -48,6 +48,31 @@ class Aluno {
 
   setNome(nome){
     this.#nome = nome;
+
+  }
+
+  getNota(n){
+    if(n==1){
+      return this.#nota1;
+    }
+    else if(n==2){
+      return this.#nota2
+    }
+    else if(n==3){
+      return this.#nota3
+    }
+  }
+
+  setNota(n,no){
+    if(n==1){
+      this.#nota1= no;
+    }
+    else if(n==2){
+      this.#nota2= no;
+    }
+    else if(n==3){
+      this.#nota3= no;
+    }
 
   }
 } //fim da classe
