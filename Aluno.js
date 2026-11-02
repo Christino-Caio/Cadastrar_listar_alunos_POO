@@ -6,6 +6,7 @@ class Aluno {
   estado;
   media;
   falta;
+  chamada;
   constructor(nome, nota1, nota2, nota3) {
     this.#nome = nome;
     this.nota1 = nota1;

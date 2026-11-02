@@ -36,16 +36,17 @@ static listar(turma) {
   tabListar.classList.add('active');
   tabCadastrar.classList.remove('active');
   
-  let lista = '<table> <tr> <b><th>Nome</th> <th>Nota 1</th> <th>Nota 2</th> <th>Nota 3</th> <th>Media</th> <th>Situação</th></b></tr>';
+  let lista = '<table><tr><b> <th>#</th> <th>Nome</th> <th>Nota 1</th> <th>Nota 2</th> <th>Nota 3</th> <th>Media</th> <th>Situação</th></b></tr>';
   for (let i = 0; i < turma.length; i++) {
+    turma[i].chamada = i;
     if (turma[i].falta >4){
 
-      lista = lista + "<tr><td>" + turma[i].getNome() + ' </td> '+ 
+      lista = lista + "<tr>"+"<td>"+turma[i].chamada+"</td> "+" <td>" + turma[i].getNome() + ' </td> '+ 
        "<td> "+ turma[i].nota1 + " </td>" + "<td>"+ turma[i].nota2+"</td>" + "<td>"+ turma[i].nota3+ "</td>" +"<td>" + turma[i].media.toFixed(2) + "</td>" +"<td>"+ turma[i].estado + "</td></tr>";
     }
     else{
-      lista = lista + "<tr><td>" +  turma[i].getNome() + ' </td> ' +
-       "<td>"+ turma[i].nota1+"</td>"+"<td>"+ turma[i].nota2+"</td>"+"<td>"+ turma[i].nota3+"</td>"+"<td>" + turma[i].media.toFixed(2) + "</td>" +  "<td>"+ turma[i].estado + "</td></tr> ";
+      lista = lista + "<tr>"+"<td>"+turma[i].chamada+"</td> "+"<td>" +  turma[i].getNome() + ' </td> ' +
+       "<td>"+ turma[i].nota1+"</td>"+"<td>"+ turma[i].nota2+"</td>"+"<td>"+ turma[i].nota3+"</td>"+"<td>" + turma[i].media.toFixed(2) + "</td>" +  "<td>    "+ turma[i].estado + "</td></tr> ";
        
     
     }
@@ -71,10 +72,20 @@ static cadastrar() {
 }
 
 static alterarNome(){
+  let ch = Number(prompt("insira o numero de identifacação do aluno"));
   for(let i=0; i<turma.length; i++){
-    document.getElementById("alterar-aluno["+i+"]").innerHTML = "255555"
+    if(ch == turma[i].chamada){
+      let Nm;
+      Nm = prompt("Insira o novo Nome");
+      turma[i].setNome(Nm);
+    }
+    else if(ch >turma.length){
 
+      alert("Esse aluno não esta matriculado");
+    }
+    
   }
+  Interface.listar(turma);
 } 
 
 }
