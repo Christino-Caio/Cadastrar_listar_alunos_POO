@@ -88,7 +88,7 @@ class Interface{
     Interface.listar(turma);
   }
 
-  static alteraM(turma,i,n1,n2,n3){
+  alteraM(turma,i,n1,n2,n3){
     return turma[i].gerarMedia(n1,n2,n3);
 
   }
@@ -101,10 +101,12 @@ class Interface{
           let Nm;
           Nm = prompt("Insira a nova nota");
           turma[i].setNota(nt, Nm);
-          let n1 = turma[i].getNota(1);
-          let n2 = turma[i].getNota(2);
-          let n3 = turma[i].getNota(3);
-          turma[i].media = alteraM(turma,i,n1,n2,n3);
+          n1 = turma[i].getNota(1);
+          n2 = turma[i].getNota(2);
+          n3 = turma[i].getNota(3);
+          let n = i;
+          alteraM(turma,n,n1,n2,n3);
+          //turma[i].media = alteraM(turma,i,n1,n2,n3);
       }
   }
   Interface.listar(turma);
