@@ -41,6 +41,12 @@ class Aluno {
     }
    
   }
+  
+  setMedia(me){
+    this.media = me;
+    return me;
+
+  }
 
   getNome(){
     return this.#nome;
