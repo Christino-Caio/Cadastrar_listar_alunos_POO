@@ -88,10 +88,7 @@ class Interface{
     Interface.listar(turma);
   }
 
-  alteraM(turma,i,n1,n2,n3){
-    return turma[i].gerarMedia(n1,n2,n3);
 
-  }
 
   static mudarNota(){
     let ch = Number(prompt("insira o numero de identifacação do aluno"));
