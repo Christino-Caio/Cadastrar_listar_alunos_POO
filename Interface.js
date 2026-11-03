@@ -97,15 +97,19 @@ class Interface{
     let ch = Number(prompt("insira o numero de identifacação do aluno"));
       for(let i=0; i<turma.length; i++){
         if(ch == turma[i].chamada){
-          let nt = Number(prompt("insira 1 para mudar a n1, 2 para n2 e 3 para n3"));
+          let nt = parseInt(prompt("insira 1 para mudar a n1, 2 para n2 e 3 para n3"));
           let Nm;
           Nm = prompt("Insira a nova nota");
           turma[i].setNota(nt, Nm);
           n1 = turma[i].getNota(1);
+          alert(n1);
           n2 = turma[i].getNota(2);
+          alert(n2);
           n3 = turma[i].getNota(3);
-          let n = i;
-          alteraM(turma,n,n1,n2,n3);
+          alert(n3);
+          
+          turma[i].gerarMedia(n1,n2,n3);
+          alert(turma[i].media);
           //turma[i].media = alteraM(turma,i,n1,n2,n3);
       }
   }
