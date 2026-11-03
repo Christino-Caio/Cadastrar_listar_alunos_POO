@@ -97,11 +97,11 @@ class Interface{
           let Nm;
           Nm = prompt("Insira a nova nota");
           turma[i].setNota(nt, Nm);
-          turma[i].gerarMedia(turma[i].getNota(1),turma[i].getNota(2),turma[i].getNota(3));
+          
       }
   }
-
-  Interface.listar(turma)
+  
+  Interface.listar(turma);
 }
 
 }
