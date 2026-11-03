@@ -48,11 +48,8 @@ class Interface{
       else{
         lista = lista + "<tr>"+"<td>"+turma[i].chamada+"</td> "+"<td>" +  turma[i].getNome() + ' </td> ' +
         "<td>"+ turma[i].getNota(1)+"</td>"+"<td>"+ turma[i].getNota(2)+"</td>"+"<td>"+ turma[i].getNota(3)+"</td>"+"<td>" + turma[i].media.toFixed(2) + "</td>" +  "<td>    "+ turma[i].estado + "</td></tr> ";
-        
-      
       }
 
-      
     }
     document.getElementById('alunos').innerHTML = lista ;
   }
@@ -72,6 +69,8 @@ class Interface{
     //document.getElementById("media").innerHTML = m;
   }
 
+
+
   static alterarNome(){
     let ch = Number(prompt("insira o numero de identifacação do aluno"));
     for(let i=0; i<turma.length; i++){
@@ -89,6 +88,11 @@ class Interface{
     Interface.listar(turma);
   }
 
+  static alteraM(turma,i,n1,n2,n3){
+    return turma[i].gerarMedia(n1,n2,n3);
+
+  }
+
   static mudarNota(){
     let ch = Number(prompt("insira o numero de identifacação do aluno"));
       for(let i=0; i<turma.length; i++){
@@ -97,10 +101,12 @@ class Interface{
           let Nm;
           Nm = prompt("Insira a nova nota");
           turma[i].setNota(nt, Nm);
-          
+          let n1 = turma[i].getNota(1);
+          let n2 = turma[i].getNota(2);
+          let n3 = turma[i].getNota(3);
+          turma[i].media = alteraM(turma,i,n1,n2,n3);
       }
   }
-  
   Interface.listar(turma);
 }
 
