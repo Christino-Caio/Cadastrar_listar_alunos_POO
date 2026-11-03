@@ -53,7 +53,7 @@ class Interface{
       }
 
     }
-    document.getElementById('alunos').innerHTML = lista ;
+    document.getElementById('alunos').innerHTML = lista;
   }
 
   static cadastrar() {
@@ -132,9 +132,9 @@ class Interface{
     tabListar.classList.add('active');
     tabCadastrar.classList.remove('active');
     
-    let lista = '<table><tr><b><th>Professor</th> <th>Curso</th></b></tr>';
+    let lista = '<table><tr><b><th>Professor</th><th>Curso</th> </b></tr>';
     for (let i = 0; i < classe.length; i++) {
-      lista = lista + "<tr>"+"<td>"+classe[i].professor+"</td> "+"<td>"+classe[i].curso+ "</td>"+ " </tr>";
+      lista = lista + "<tr><td>"+classe[i].professor+"</td>"+"<td>"+classe[i].curso+ "</td></tr>";
 
     }
     document.getElementById('turmas').innerHTML = lista;

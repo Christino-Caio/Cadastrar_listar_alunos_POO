@@ -47,4 +47,53 @@
   #alunos th:last-child {
     border-radius: 0 8px 8px 0;
   }
-  
+
+/* Tabela de Turmas */
+#turmas table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+}
+
+
+/* Cabeçalho */
+#turmas th {
+  background-color: #f1f3f5;
+  color: #333;
+  padding: 14px 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+/* Células da turma */
+#turmas td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #333;
+}
+
+
+/* Efeito ao passar o mouse */
+#turmas tr:hover td {
+  background-color: #f8f9fa;
+}
+
+
+/* Alinhamento da média */
+#turmas th:nth-child(2),
+#turmas td:nth-child(2) {
+  text-align: center;
+}
+
+
+/* Cantos arredondados do cabeçalho */
+#turmas th:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+
+#turmas th:last-child {
+  border-radius: 0 8px 8px 0;
+}

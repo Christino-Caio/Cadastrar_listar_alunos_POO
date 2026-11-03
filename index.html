@@ -18,7 +18,7 @@
       <button class="tab-button active" id="btn-cadastrar" onclick="Interface.cadastrar()">
         Cadastrar
       </button>
-      <button class="tab-button" id="btn-listar" onclick="listarAluno()">
+      <button class="tab-button" id="btn-listar" onclick="listarTurma();listarAluno()">
         Listar Alunos
       </button>
     </div>
@@ -43,13 +43,15 @@
         <button class="tab-button active" id="btn-MM" onclick="Interface.mudarNota()">
           Mudar nota
         </button>
-      <ul class="lista-turma" id="turmas">  
-        <ul class="lista-alunos" id="alunos">
-          <!-- O JavaScript vai colocar os alunos aqui depois -->
+      <ul class="lista-turma" id="turmas">
+        <li>Nenhuma turma cadastrada ainda.</li>
+      </ul>  
+      <ul class="lista-alunos" id="alunos">
+        <!-- O JavaScript vai colocar os alunos aqui depois -->
         
-          <li>Nenhum aluno cadastrado ainda.</li>
-        </ul>
+        <li>Nenhum aluno cadastrado ainda.</li>
       </ul>
+      
     </div>
     
   </body>
