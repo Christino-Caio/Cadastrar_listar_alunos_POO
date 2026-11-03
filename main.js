@@ -1,6 +1,6 @@
 let turma = [];
 
-//para armazenar o professor e curos
+//para armazenar o professor e cursos
 let classe =[];
 
 function listarAluno(){
@@ -34,7 +34,11 @@ function novaNota(){
 // CONFIGURAÇÕES DA CLASS TURMA
 //para salvar classe com professor
 function btaSalTurma(){
-    let b = Interface.listarClasse(classe);
-    classe.push(a);
+    let b = Interface.salClasse(classe);
+    classe.push(b);
 
+}
+
+function listarTurma(){
+    Interface.listarClasse(classe);
 }

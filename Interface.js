@@ -113,7 +113,33 @@ class Interface{
     let prof = document.getElementById('professor').value;
     let curso = document.getElementById('curso').value;
 
-    let cc = new Turma(prof, curso)
+    let cc = new Turma(prof, curso);
+    alert("Turma Cadastrada")
+    return cc;
+  }
+
+  static listarClasse(classe){
+    const btnCadastrar = document.getElementById('btn-cadastrar');
+    const tabCadastrar = document.getElementById('tab-cadastrar');
+    const btnListar = document.getElementById('btn-listar');
+    const tabListar = document.getElementById('tab-listar');
+
+    btnListar.classList.add('active');
+    btnCadastrar.classList.remove('active');
+
+
+    // Ajusta o conteúdo visível
+    tabListar.classList.add('active');
+    tabCadastrar.classList.remove('active');
+    
+    let lista = '<table><tr><b><th>Professor</th> <th>Curso</th></b></tr>';
+    for (let i = 0; i < classe.length; i++) {
+      lista = lista + "<tr>"+"<td>"+classe[i].professor+"</td> "+"<td>"+classe[i].curso+ "</td>"+ " </tr>";
+
+    }
+    document.getElementById('turmas').innerHTML = lista;
+    
+
   }
 
 
