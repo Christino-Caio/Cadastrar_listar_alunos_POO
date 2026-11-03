@@ -16,12 +16,14 @@ class Interface{
     let m = a1.gerarMedia(n1, n2, n3);
     a1.gerarEstado(m);
     a1.Faltou(ff);
+
+
     //turma[turma.length] = a1;
     alert('aluno cadastrado');
     return a1;
   }
 
-
+ // PRECISA ADICIONAR PARA MOSTRAR A LISTA DAS TURMAS
   static listar(turma) {
     const btnCadastrar = document.getElementById('btn-cadastrar');
     const tabCadastrar = document.getElementById('tab-cadastrar');
@@ -105,5 +107,15 @@ class Interface{
   }
   Interface.listar(turma);
 }
+            // INICIO DAS CONFIGURAÇÕES CLASS TURMA
+// Classe turma para pegar os valores de turma
+  static salClasse(classe) {
+    let prof = document.getElementById('professor').value;
+    let curso = document.getElementById('curso').value;
+
+    let cc = new Turma(prof, curso)
+  }
+
+
 
 }

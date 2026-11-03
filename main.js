@@ -1,5 +1,8 @@
 let turma = [];
 
+//para armazenar o professor e curos
+let classe =[];
+
 function listarAluno(){
     Interface.listar(turma);
 }
@@ -8,6 +11,7 @@ function botaoSalvar(){
   let a =  Interface.salvar(turma);
   turma.push(a);
 }
+
 
 function cadastroAluno(){
     Interface.cadastrar();
@@ -24,5 +28,13 @@ function mudarNome(){
 function novaNota(){
     Interface.mudarNota()
 
+
+}
+
+// CONFIGURAÇÕES DA CLASS TURMA
+//para salvar classe com professor
+function btaSalTurma(){
+    let b = Interface.listarClasse(classe);
+    classe.push(a);
 
 }

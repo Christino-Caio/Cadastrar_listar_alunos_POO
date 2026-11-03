@@ -9,8 +9,8 @@ class Turma{
 
     }
 
-    gerarTurma(turma,professor,curso){
-        
+    gerarTurma(alunos){
+        this.alunos = alunos;
 
     }
 
