@@ -117,7 +117,7 @@ class Interface{
     alert("Turma Cadastrada")
     return cc;
   }
-
+//aaaa
   static listarClasse(classe){
     const btnCadastrar = document.getElementById('btn-cadastrar');
     const tabCadastrar = document.getElementById('tab-cadastrar');
