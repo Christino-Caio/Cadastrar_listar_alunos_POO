@@ -97,7 +97,7 @@ class Interface{
     let ch = Number(prompt("insira o numero de identifacação do aluno"));
       for(let i=0; i<turma.length; i++){
         if(ch == turma[i].chamada){
-          let nt = parseInt(prompt("insira 1 para mudar a n1, 2 para n2 e 3 para n3"));
+          let nt = parseFloat(prompt("insira 1 para mudar a n1, 2 para n2 e 3 para n3"));
           let Nm;
           Nm =  parseFloat(prompt("Insira a nova nota"));
           turma[i].setNota(nt, Nm);
