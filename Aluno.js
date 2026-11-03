@@ -56,10 +56,10 @@ class Aluno {
       return this.#nota1;
     }
     else if(n==2){
-      return this.#nota2
+      return this.#nota2;
     }
     else if(n==3){
-      return this.#nota3
+      return this.#nota3;
     }
   }
 
