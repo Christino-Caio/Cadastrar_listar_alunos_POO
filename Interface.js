@@ -30,14 +30,19 @@ class Interface{
     const tabCadastrar = document.getElementById('tab-cadastrar');
     const btnListar = document.getElementById('btn-listar');
     const tabListar = document.getElementById('tab-listar');
+    const btnListarTurma = document.getElementById('btn-LisTur'); // Adicionado
+    const tabListarTurma = document.getElementById('tab-classe'); // Adicionado
+    
 
+    // Ativa a aba atual
     btnListar.classList.add('active');
-    btnCadastrar.classList.remove('active');
-
-
-    // Ajusta o conteúdo visível
     tabListar.classList.add('active');
+
+    // Desativa as OUTRAS duas abas obrigatoriamente
+    btnCadastrar.classList.remove('active');
     tabCadastrar.classList.remove('active');
+    btnListarTurma.classList.remove('active');
+    tabListarTurma.classList.remove('active');
     
     let lista = '<table><tr><b> <th>#</th> <th>Nome</th> <th>Nota 1</th> <th>Nota 2</th> <th>Nota 3</th> <th>Media</th> <th>Situação</th></b></tr>';
     for (let i = 0; i < turma.length; i++) {
@@ -50,7 +55,7 @@ class Interface{
       }
       else{
         lista = lista + "<tr>"+"<td>"+turma[i].chamada+"</td> "+"<td>" +  turma[i].getNome() + ' </td> ' +
-        "<td>"+ turma[i].getNota(1)+"</td>"+"<td>"+ turma[i].getNota(2)+"</td>"+"<td>"+ turma[i].getNota(3)+"</td>"+"<td>" + turma[i].media.toFixed(2) + "</td>" +  "<td>    "+ turma[i].estado + "</td></tr> ";
+        "<td>"+ turma[i].getNota(1)+"</td>"+"<td>"+ turma[i].getNota(2)+"</td>"+"<td>"+ turma[i].getNota(3)+"</td>"+"<td>" + turma[i].media.toFixed(2) + "</td>" +  "<td>"+ turma[i].estado + "</td></tr> ";
       }
 
     }
@@ -109,7 +114,6 @@ class Interface{
   }
   
 }
-
 
 
 }

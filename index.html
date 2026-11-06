@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="./TableStyle.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="Aluno.js"></script>
+    <script src="Turma.js"></script>
     <!--<script src="./script.js"></script> -->
     <script src="Interface.js"></script>
-    <script src="main.js"></script>
-    <script src="Turma.js"></script>
-    <title>Sistema Escolar</title>
     <script src="InterfaceTurma.js"></script>
+    <script src="main.js"></script>
+    
+    <title>Sistema Escolar</title>
+    
   </head>
   <body>
     <!-- Botões para trocar de aba -->
@@ -19,8 +21,11 @@
       <button class="tab-button active" id="btn-cadastrar" onclick="Interface.cadastrar()">
         Cadastrar
       </button>
-      <button class="tab-button" id="btn-listar" onclick="listarTurma();listarAluno()">
+      <button class="tab-button" id="btn-listar" onclick="listarAluno()">
         Listar Alunos
+      </button>
+      <button class="tab-button" id="btn-LisTur" onclick="listarTurma()">
+        Listar Cursos
       </button>
     </div>
 
@@ -47,15 +52,21 @@
         <button class="tab-button active" id="btn-MM" onclick="Interface.mudarNota()">
           Mudar nota
         </button>
-      <ul class="lista-turma" id="turmas">
-        <li>Nenhuma turma cadastrada ainda.</li>
-      </ul>  
       <ul class="lista-alunos" id="alunos">
         <!-- O JavaScript vai colocar os alunos aqui depois -->
         
         <li>Nenhum aluno cadastrado ainda.</li>
       </ul>
       
+    </div>
+
+    <!-- Conteudo da aba 3: Turmas -->
+    <div id="tab-classe" class="tab-content">
+      <h3>Turmas cadastradas</h3>
+        <ul class="Turma-lista" id="turmas">
+        <li>Nenhuma turma cadastrada ainda.</li>
+      </ul>  
+        
     </div>
     
   </body>

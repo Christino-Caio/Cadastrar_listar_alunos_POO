@@ -1,7 +1,9 @@
+// armazenamento dos alunos
 let turma = [];
 
 //para armazenar o professor e cursos; vai armazenar todas as informçãoes de uma amateria;
-//também vai armazenar a turma de alunos
+//também vai armazenar a turma de alunos;
+//ct = codigo de turma
 let ct =[];
 
 function listarAluno(){
