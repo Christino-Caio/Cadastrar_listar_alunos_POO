@@ -7,11 +7,14 @@ class Aluno {
   media;
   falta;
   chamada;
-  constructor(nome, nota1, nota2, nota3) {
+  //codigo em que o curso o aluno pertence
+  aTurma;
+  constructor(nome, nota1, nota2, nota3, aTurma) {
     this.#nome = nome;
     this.#nota1 = nota1;
     this.#nota2 = nota2;
     this.#nota3 = nota3;
+    this.aTurma = aTurma;
   }
   gerarMedia(nota1, nota2, nota3) {
     let m = (nota1 + nota2 + nota3) / 3;

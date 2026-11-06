@@ -1,16 +1,15 @@
 class Turma{
     professor;
     curso;
+    //aluno deve receber turma
     alunos;
+    //codigo do curso
+    codCurso;
 
-    constructor(prof, curso){
+    constructor(prof, curso, codCurso){
         this.professor = prof;
         this.curso = curso;
-
-    }
-
-    gerarTurma(alunos){
-        this.alunos = alunos;
+        this.codCurso = codCurso;
 
     }
 

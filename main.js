@@ -1,7 +1,8 @@
 let turma = [];
 
-//para armazenar o professor e cursos
-let classe =[];
+//para armazenar o professor e cursos; vai armazenar todas as informçãoes de uma amateria;
+//também vai armazenar a turma de alunos
+let ct =[];
 
 function listarAluno(){
     Interface.listar(turma);
@@ -34,11 +35,11 @@ function novaNota(){
 // CONFIGURAÇÕES DA CLASS TURMA
 //para salvar classe com professor
 function btaSalTurma(){
-    let b = Interface.salClasse(classe);
-    classe.push(b);
+    let b = InterfaceTur.salClasse(ct);
+    ct.push(b);
 
 }
 
 function listarTurma(){
-    Interface.listarClasse(classe);
+    InterfaceTur.listarClasse(ct,turma);
 }

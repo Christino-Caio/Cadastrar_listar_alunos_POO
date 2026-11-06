@@ -11,7 +11,8 @@ class Interface{
     let n1 = Number(document.getElementById('n1').value);
     let n2 = Number(document.getElementById('n2').value);
     let n3 = Number(document.getElementById('n3').value);
-    let a1 = new Aluno(nome, n1, n2, n3);
+    let tur = Number(document.getElementById('aTurma').value);
+    let a1 = new Aluno(nome, n1, n2, n3, tur);
     let ff = Number(document.getElementById('falta').value);
     let m = a1.gerarMedia(n1, n2, n3);
     a1.gerarEstado(m);
@@ -23,7 +24,7 @@ class Interface{
     return a1;
   }
 
- // PRECISA ADICIONAR PARA MOSTRAR A LISTA DAS TURMAS
+ // PRECISA ADICIONAR PARA MOSTRAR A LISTA DAS TURMAS/CLASSES
   static listar(turma) {
     const btnCadastrar = document.getElementById('btn-cadastrar');
     const tabCadastrar = document.getElementById('tab-cadastrar');
@@ -104,43 +105,10 @@ class Interface{
           turma[i].gerarEstado(turma[i].media);
           
       }
+      Interface.listar(turma);
   }
-  Interface.listar(turma);
+  
 }
-            // INICIO DAS CONFIGURAÇÕES CLASS TURMA
-// Classe turma para pegar os valores de turma
-  static salClasse(classe) {
-    let prof = document.getElementById('professor').value;
-    let curso = document.getElementById('curso').value;
-
-    let cc = new Turma(prof, curso);
-    alert("Turma Cadastrada")
-    return cc;
-  }
-//aaaa
-  static listarClasse(classe){
-    const btnCadastrar = document.getElementById('btn-cadastrar');
-    const tabCadastrar = document.getElementById('tab-cadastrar');
-    const btnListar = document.getElementById('btn-listar');
-    const tabListar = document.getElementById('tab-listar');
-
-    btnListar.classList.add('active');
-    btnCadastrar.classList.remove('active');
-
-
-    // Ajusta o conteúdo visível
-    tabListar.classList.add('active');
-    tabCadastrar.classList.remove('active');
-    
-    let lista = '<table><tr><b><th>Professor</th><th>Curso</th> </b></tr>';
-    for (let i = 0; i < classe.length; i++) {
-      lista = lista + "<tr><td>"+classe[i].professor+"</td>"+"<td>"+classe[i].curso+ "</td></tr>";
-
-    }
-    document.getElementById('turmas').innerHTML = lista;
-    
-
-  }
 
 
 
