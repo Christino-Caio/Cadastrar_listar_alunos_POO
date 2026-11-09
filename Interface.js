@@ -30,15 +30,14 @@ class Interface{
     const tabCadastrar = document.getElementById('tab-cadastrar');
     const btnListar = document.getElementById('btn-listar');
     const tabListar = document.getElementById('tab-listar');
-    const btnListarTurma = document.getElementById('btn-LisTur'); // Adicionado
-    const tabListarTurma = document.getElementById('tab-classe'); // Adicionado
-    
+    const btnListarTurma = document.getElementById('btn-LisTur'); 
+    const tabListarTurma = document.getElementById('tab-classe');     
 
     // Ativa a aba atual
     btnListar.classList.add('active');
     tabListar.classList.add('active');
 
-    // Desativa as OUTRAS duas abas obrigatoriamente
+    // Desativa as outras abas obrigatoriamente
     btnCadastrar.classList.remove('active');
     tabCadastrar.classList.remove('active');
     btnListarTurma.classList.remove('active');

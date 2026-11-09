@@ -24,41 +24,44 @@ class InterfaceTur{
     const tabCadastrar = document.getElementById('tab-cadastrar');
     const btnListarTurma = document.getElementById('btn-LisTur');
     const tabListarTurma = document.getElementById('tab-classe');
-    const btnListar = document.getElementById('btn-listar'); // Adicionado
-    const tabListar = document.getElementById('tab-listar');  // Adicionado
+    const btnListar = document.getElementById('btn-listar'); 
+    const tabListar = document.getElementById('tab-listar'); 
 
     // Ativa a aba atual
     btnListarTurma.classList.add('active');
     tabListarTurma.classList.add('active');
 
-    // Desativa as OUTRAS duas abas obrigatoriamente
+    // Desativa as outras abas obrigatoriamente
     btnCadastrar.classList.remove('active');
     tabCadastrar.classList.remove('active');
     btnListar.classList.remove('active');
     tabListar.classList.remove('active');
 
 
-    //vai armazenar os alunos da classe Aluno no alunos da classe Turma
-    /*for(let i=0; i<turma.length; i++){
-
-      classe[i].alunos = turma[i].getNome;
-    } */
     
     let materia = '<table><tr><b><th>Professor</th><th>Curso</th> <th>Codigo de Turma</th> </b></tr>';
     for (let i = 0; i < classe.length; i++) {
       materia = materia + "<tr><td>"+classe[i].professor+"</td>"+"<td>"+classe[i].curso+ "</td>"+"<td>" + classe[i].codCurso +"</td></tr>";
     }
 
-    /*   for(let i =0;i <classe.length; i++){
-      materia = materia + 
-
-    }  */
+    
 
     document.getElementById('turmas').innerHTML = materia;
     
 
   }
-
+  //ct significa codigo turma
+  static addAlunos(turma,ct, materia){
+    // ct.alunos registra os nomes de alunos.
+    //turma[] tem info dos alunos.
+    /*
+    pego o Aturma (codigo de turma dos alunos) de 
+    turma[i].Aturma verifico com ct[i].codcurso, então passo turma[i].nome
+    para ct[i].alunos
+    
+    */
+    //aluno de Turma.js deve receber de main.js turma;
+    //preciso fazer função que separe alunos por turma cadastrada.
 
 
 }

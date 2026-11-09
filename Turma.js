@@ -1,7 +1,7 @@
 class Turma{
     professor;
     curso;
-    //aluno deve receber turma
+    //aluno deve receber turma de Aluno.js
     alunos;
     //codigo do curso
     codCurso;
@@ -10,7 +10,7 @@ class Turma{
         this.professor = prof;
         this.curso = curso;
         this.codCurso = codCurso;
-
+        this.alunos =[];
     }
 
 }
