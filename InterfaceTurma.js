@@ -6,8 +6,8 @@ class InterfaceTur{
   }
 
  
-// INICIO DAS CONFIGURAÇÕES CLASS TURMA
-// Classe turma para pegar os valores de turma
+  // INICIO DAS CONFIGURAÇÕES CLASS TURMA
+  // Classe turma para pegar os valores de turma
   static salClasse(classe) {
     let prof = document.getElementById('professor').value;
     let curso = document.getElementById('curso').value;
@@ -17,8 +17,8 @@ class InterfaceTur{
     alert("Turma Cadastrada");
     return cc;
   }
-//aaaa
-//função para listar alunos na classe
+
+  //função para listar alunos na classe
   static listarClasse(classe,turma){
     const btnCadastrar = document.getElementById('btn-cadastrar');
     const tabCadastrar = document.getElementById('tab-cadastrar');
@@ -50,18 +50,10 @@ class InterfaceTur{
     
 
   }
-  //ct significa codigo turma
-  static addAlunos(turma,ct, materia){
-    // ct.alunos registra os nomes de alunos.
-    //turma[] tem info dos alunos.
-    /*
-    pego o Aturma (codigo de turma dos alunos) de 
-    turma[i].Aturma verifico com ct[i].codcurso, então passo turma[i].nome
-    para ct[i].alunos
-    
-    */
-    //aluno de Turma.js deve receber de main.js turma;
-    //preciso fazer função que separe alunos por turma cadastrada.
 
+  static listarAlunos(){
+    
+
+  }
 
 }
