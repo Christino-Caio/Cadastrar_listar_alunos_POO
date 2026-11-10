@@ -37,11 +37,15 @@ function novaNota(){
 // CONFIGURAÇÕES DA CLASS TURMA
 //para salvar classe com professor
 function btaSalTurma(){
-    let b = InterfaceTurma.salClasse(ct);
+    let b = InterfaceTur.salClasse(ct);
     ct.push(b);
 
 }
 
 function listarTurma(){
-    InterfaceTurma.listarClasse(ct,turma);
+    InterfaceTur.listarClasse(ct);
+}
+
+function listarpovo(){
+    InterfaceTur.listarAlunos(turma,ct);
 }
