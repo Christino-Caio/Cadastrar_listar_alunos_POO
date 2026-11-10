@@ -43,7 +43,7 @@ function btaSalTurma(){
 }
 
 function listarTurma(){
-    InterfaceTur.listarClasse(ct);
+    InterfaceTur.listarClasse(ct,turma);
 }
 
 function listarpovo(){

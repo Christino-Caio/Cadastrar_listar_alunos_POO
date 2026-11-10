@@ -19,7 +19,7 @@ class InterfaceTur{
   }
 
   //função para listar alunos na classe
-  static listarClasse(classe){
+  static listarClasse(classe, turma){
     const btnCadastrar = document.getElementById('btn-cadastrar');
     const tabCadastrar = document.getElementById('tab-cadastrar');
     const btnListarTurma = document.getElementById('btn-LisTur');
@@ -44,10 +44,25 @@ class InterfaceTur{
       materia = materia + "<tr><td>"+classe[i].professor+"</td>"+"<td>"+classe[i].curso+ "</td>"+"<td>" + classe[i].codCurso +"</td></tr>";
     }
 
+
+    //logica de listar Alunos deve ficar aqui dentro para cadastrasr alunos automaticamente
+    let aluno = '<table><tr><b> <th>Nome</th> </b></tr>';
+    for(let i=0; i< turma.length; i++){
+      for(let j=0;j<turma.length; j++){
+        if(classe[i].codCurso == turma[j].Aturma){
+          classe[i].alunos[j] = turma[j].getNome();
+          materia = materia + aluno + classe[i].alunos[j];
+
+        }
+      }
+      
+    }
+    
     
 
     document.getElementById('turmas').innerHTML = materia;
     
+
 
   }
 
