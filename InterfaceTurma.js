@@ -44,19 +44,19 @@ class InterfaceTur{
       materia = materia + "<tr><td>"+classe[i].professor+"</td>"+"<td>"+classe[i].curso+ "</td>"+"<td>" + classe[i].codCurso +"</td></tr>";
     }
 
-
+    /*
     //logica de listar Alunos deve ficar aqui dentro para cadastrasr alunos automaticamente
     let aluno = '<table><tr><b> <th>Nome</th> </b></tr>';
     for(let i=0; i< turma.length; i++){
       for(let j=0;j<turma.length; j++){
         if(classe[i].codCurso == turma[j].Aturma){
           classe[i].alunos[j] = turma[j].getNome();
-          materia = materia + aluno + classe[i].alunos[j];
+          materia = materia + classe[i].alunos[j];
 
         }
       }
       
-    }
+    } */
     
     
 
@@ -66,6 +66,7 @@ class InterfaceTur{
 
   }
 
+  /*
   static listarAlunos(turma, ct){
     //ct onde as Turmas estão armazenados
     //aTurma = codigo do curso do aluno; codCurso = codigo do curso
@@ -84,6 +85,6 @@ class InterfaceTur{
     }
     document.getElementById('turmas').innerHTML = add;
 
-  }
+  } */
 
 }
