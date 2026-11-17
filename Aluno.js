@@ -1,9 +1,13 @@
+/*extends significa que Aluno faz parte de uma categoria de Pessoa*/
+
 class Aluno extends Pessoa{
   #nota1;
   #nota2;
   #nota3;
   media;
   constructor(nome, mat, estado, nota1, nota2, nota3) {
+    /*super quer dizer que vai usar as informações de Pessoa
+    para ajudar na classe aluno*/
     super(nome, mat, estado);
     this.#nota1 = nota1;
     this.#nota2 = nota2;

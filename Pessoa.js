@@ -1,3 +1,7 @@
+/*principal classe onde se tem a caracteristica principal dos individuos:
+Nome
+Estado e Matricula
+*/
 class Pessoa{
     #nome;
     #matricula;
