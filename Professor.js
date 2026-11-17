@@ -1,5 +1,16 @@
 class Professor{
 
-    #contato;
-    #sala;
+    #email; /*string */
+    #sala; /*int */
+    #formação; /*string */
+
+    constructor() {
+
+    }
+
+   
 }
+
+
+
+
