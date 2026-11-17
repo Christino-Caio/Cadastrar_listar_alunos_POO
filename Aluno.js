@@ -7,7 +7,7 @@ class Aluno extends Pessoa {
   chamada;
   //codigo em que o curso o aluno pertence
   aTurma;
-  constructor(nome, nota1, nota2, nota3, aTurma) {
+  constructor(nome,matricula,estado, nota1, nota2, nota3, aTurma) {
     super(nome,matricula,estado);
     //this.#nome = nome;
     this.#nota1 = nota1;

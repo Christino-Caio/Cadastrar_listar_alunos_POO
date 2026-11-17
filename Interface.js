@@ -12,7 +12,7 @@ class Interface{
     let n2 = Number(document.getElementById('n2').value);
     let n3 = Number(document.getElementById('n3').value);
     let tur = Number(document.getElementById('aTurma').value);
-    let a1 = new Aluno(nome, n1, n2, n3, tur);
+    let a1 = new Aluno(nome,"100","ativo", n1, n2, n3, tur);
     let ff = Number(document.getElementById('falta').value);
     let m = a1.gerarMedia(n1, n2, n3);
     a1.gerarEstado(m);
