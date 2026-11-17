@@ -1,3 +1,4 @@
+/*class Professor pega itens de class Pessoa para se completar */
 class Professor extends Pessoa{
     #formacao;
     #email;
