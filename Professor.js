@@ -1,27 +1,15 @@
 class Professor extends Pessoa{
-
-    #email; /*string */
-    #sala; /*int */
-    #formação; /*string */
-
-    constructor(nome,matricula,estado,formacao,email) {
-
-        super(nome,matricula,estado);
-        this.#formacao= formacao;
+    #formacao;
+    #email;
+    constructor(nome, mat, estado, forma,email){
+        super(nome, mat, estado);
+        this.#formacao = forma;
         this.#email = email;
-
     }
-
     getFormacao(){
         return this.#formacao;
     }
-
-    setFormacao(formacao){
-        this.#formacao = formacao;
+    setFormacao(forma){
+        this.#formacao = forma;
     }
-   
 }
-
-
-
-

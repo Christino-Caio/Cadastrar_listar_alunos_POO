@@ -1,19 +1,13 @@
-class Aluno extends Pessoa {
+class Aluno extends Pessoa{
   #nota1;
   #nota2;
   #nota3;
   media;
-  falta;
-  chamada;
-  //codigo em que o curso o aluno pertence
-  aTurma;
-  constructor(nome,matricula,estado, nota1, nota2, nota3, aTurma) {
-    super(nome,matricula,estado);
-    //this.#nome = nome;
+  constructor(nome, mat, estado, nota1, nota2, nota3) {
+    super(nome, mat, estado);
     this.#nota1 = nota1;
     this.#nota2 = nota2;
     this.#nota3 = nota3;
-    this.aTurma = aTurma;
   }
   gerarMedia(nota1, nota2, nota3) {
     let m = (nota1 + nota2 + nota3) / 3;
@@ -32,55 +26,22 @@ class Aluno extends Pessoa {
     this.estado = est;
     return est;
   }
-  Faltou(falta) {
-    let est;
-    let fal = falta
-    if (falta > 4) {
-      est = 'Reprovado por falta';
-      this.estado = est;
-      this.falta = fal;
-      return est;
-    }
-   
+  getNota1(){
+    return this.#nota1;
   }
-  
-  setMedia(me){
-    this.media = me;
-    return me;
-
+  setNota1(nota){
+    this.#nota1 = nota;
   }
-
-  getNome(){
-    return this.#nome;
+  getNota2(){
+    return this.#nota2;
   }
-
-  setNome(nome){
-    this.#nome = nome;
-
+  setNota2(nota){
+    this.#nota2 = nota;
   }
-
-  getNota(n){
-    if(n==1){
-      return this.#nota1;
-    }
-    else if(n==2){
-      return this.#nota2;
-    }
-    else if(n==3){
-      return this.#nota3;
-    }
+  getNota3(){
+    return this.#nota3;
   }
-
-  setNota(n,no){
-    if(n==1){
-      this.#nota1= no;
-    }
-    else if(n==2){
-      this.#nota2= no;
-    }
-    else if(n==3){
-      this.#nota3= no;
-    }
-
-  }
-} //fim da classe
+  setNota3(nota){
+    this.#nota3 = nota;
+  } 
+}//fim da classe

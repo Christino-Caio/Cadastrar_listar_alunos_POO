@@ -1,51 +1,28 @@
-// armazenamento dos alunos
-let turma = [];
-
-//para armazenar o professor e cursos; vai armazenar todas as informçãoes de uma materia;
-//também vai armazenar a turma de alunos;
-//ct = codigo de turma
-let ct =[];
+let turmas = [];
 
 function listarAluno(){
-    Interface.listar(turma);
+    Interface.listar(turmas);
 }
 
-function botaoSalvar(){
-  let a =  Interface.salvar(turma);
-  turma.push(a);
+/*incompleto*/
+function btnSalvarAluno(){
+   let a = Interface.salvarAluno();
+   let codigo = Interface.pegarIndiceTurma();
+   let curso = Interface.pegarCursoSelecionado();
+   let x = turmas[codigo-1].getAlunos().push(a);
+   //console.log(turmas.length)
+   //console.log(x);
 }
 
+function btnSalvarTurma(){
+    const t = Interface.salvarTurma();
+    turmas.push(t);
+ }
 
 function cadastroAluno(){
     Interface.cadastrar();
 }
 
-function mudarNome(){
-    Interface.alterarNome();
-
-    //para mudar o nome, só preciso de um loop, verificanjod o numero do aluno. 
-    // se for o mesmo numero, faz um alert para poder alterar o nome do aluno. 
-    // usar Setnome, depois tem que chamar a funcaço de listar
-}
-
-function novaNota(){
-    Interface.mudarNota()
-
-
-}
-
-// CONFIGURAÇÕES DA CLASS TURMA
-//para salvar classe com professor
-function btaSalTurma(){
-    let b = InterfaceTur.salClasse(ct);
-    ct.push(b);
-
-}
-
-function listarTurma(){
-    InterfaceTur.listarClasse(ct,turma);
-}
-
-function listarpovo(){
-    InterfaceTur.listarAlunos(turma,ct);
+function cadastrarTurma(){
+    Interface.cadastrarTurma();
 }

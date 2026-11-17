@@ -1,118 +1,143 @@
 class Interface{
+  btnCadastrar;
+  tabCadastrar;
+  btnListar;
+  tabListar;
+  btnCadastrarTurma;
+  tabCadastrarTurma;
 
-  constructor(){
-      
+constructor(){
 
-  }
+}    
+static salvarAluno() {
+  let nome = document.getElementById('nome').value;
+  let n1 = Number(document.getElementById('n1').value);
+  let n2 = Number(document.getElementById('n2').value);
+  let n3 = Number(document.getElementById('n3').value);
+  let a1 = new Aluno(nome,"100","ativo", n1, n2, n3);
+  let m = a1.gerarMedia(n1, n2, n3);
+  a1.gerarEstado(m);
+  //turma[turma.length] = a1;
+  alert('aluno cadastrado');
+  return a1;
+}
+static listar(turmas) {
+  Interface.pegarElementos();
+  const mudarMedia = "recalculaMadia()";
+  this.btnListar.classList.add('active');
+  this.btnCadastrar.classList.remove('active');
+  this.btnCadastrarTurma.classList.remove('active');
+  //console.log(turmas);
 
-  //DA AULA
-  static salvar() {
-    let nome = document.getElementById('nome').value;
-    let n1 = Number(document.getElementById('n1').value);
-    let n2 = Number(document.getElementById('n2').value);
-    let n3 = Number(document.getElementById('n3').value);
-    let tur = Number(document.getElementById('aTurma').value);
-    let a1 = new Aluno(nome,"100","ativo", n1, n2, n3, tur);
-    let ff = Number(document.getElementById('falta').value);
-    let m = a1.gerarMedia(n1, n2, n3);
-    a1.gerarEstado(m);
-    a1.Faltou(ff);
+  // Ajusta o conteúdo visível
+  this.tabListar.classList.add('active');
+  this.tabCadastrar.classList.remove('active');
+  this.tabCadastrarTurma.classList.remove('active');
 
-
-    //turma[turma.length] = a1;
-    alert('aluno cadastrado');
-    return a1;
-  }
-
- // PRECISA ADICIONAR PARA MOSTRAR A LISTA DAS TURMAS/CLASSES
-  static listar(turma) {
-    const btnCadastrar = document.getElementById('btn-cadastrar');
-    const tabCadastrar = document.getElementById('tab-cadastrar');
-    const btnListar = document.getElementById('btn-listar');
-    const tabListar = document.getElementById('tab-listar');
-    const btnListarTurma = document.getElementById('btn-LisTur'); 
-    const tabListarTurma = document.getElementById('tab-classe');     
-
-    // Ativa a aba atual
-    btnListar.classList.add('active');
-    tabListar.classList.add('active');
-
-    // Desativa as outras abas obrigatoriamente
-    btnCadastrar.classList.remove('active');
-    tabCadastrar.classList.remove('active');
-    btnListarTurma.classList.remove('active');
-    tabListarTurma.classList.remove('active');
-    
-    let lista = '<table><tr><b> <th>#</th> <th>Nome</th> <th>Nota 1</th> <th>Nota 2</th> <th>Nota 3</th> <th>Media</th> <th>Situação</th></b></tr>';
-    for (let i = 0; i < turma.length; i++) {
-      turma[i].chamada = i;
-      if (turma[i].falta >4){
-
-        lista = lista + "<tr>"+"<td>"+turma[i].chamada+"</td> "+" <td>" + turma[i].getNome() + ' </td> '+ 
-        "<td> "+ turma[i].getNota(1) + 
-        " </td>" + "<td>"+ turma[i].getNota(2)+"</td>" + "<td>"+ turma[i].getNota(3)+ "</td>" +"<td>" + turma[i].media.toFixed(2) + "</td>" +"<td>"+ turma[i].estado + "</td></tr>";
-      }
-      else{
-        lista = lista + "<tr>"+"<td>"+turma[i].chamada+"</td> "+"<td>" +  turma[i].getNome() + ' </td> ' +
-        "<td>"+ turma[i].getNota(1)+"</td>"+"<td>"+ turma[i].getNota(2)+"</td>"+"<td>"+ turma[i].getNota(3)+"</td>"+"<td>" + turma[i].media.toFixed(2) + "</td>" +  "<td>"+ turma[i].estado + "</td></tr> ";
-      }
-
-    }
-    document.getElementById('alunos').innerHTML = lista;
-  }
-
-  static cadastrar() {
-    const btnCadastrar = document.getElementById('btn-cadastrar');
-    const tabCadastrar = document.getElementById('tab-cadastrar');
-    const btnListar = document.getElementById('btn-listar');
-    const tabListar = document.getElementById('tab-listar');
-
-    btnListar.classList.remove('active');
-    btnCadastrar.classList.add('active');
-
-    // Ajusta o conteúdo visível
-    tabListar.classList.remove('active');
-    tabCadastrar.classList.add('active');
-    //document.getElementById("media").innerHTML = m;
-  }
-
-
-
-  static alterarNome(){
-    let ch = Number(prompt("insira o numero de identifacação do aluno"));
-    for(let i=0; i<turma.length; i++){
-      if(ch == turma[i].chamada){
-        let Nm;
-        Nm = prompt("Insira o novo Nome");
-        turma[i].setNome(Nm);
-      }
-      else if(ch >turma.length){
-
-        alert("Esse aluno não esta matriculado");
-      }
-      
-    }
-    Interface.listar(turma);
-  }
-
-
-
-  static mudarNota(){
-    let ch = Number(prompt("insira o numero de identifacação do aluno"));
-      for(let i=0; i<turma.length; i++){
-        if(ch == turma[i].chamada){
-          let nt = parseFloat(prompt("insira 1 para mudar a n1, 2 para n2 e 3 para n3"));
-          let Nm;
-          Nm =  parseFloat(prompt("Insira a nova nota"));
-          turma[i].setNota(nt, Nm);
-          turma[i].gerarMedia(turma[i].getNota(1),turma[i].getNota(2),turma[i].getNota(3));
-          turma[i].gerarEstado(turma[i].media);
-          
-      }
-      Interface.listar(turma);
-  }
+  let listaTurmas = '<table>'
   
+  for(let t=0;t <turmas.length;t++){
+
+    listaTurmas += '<tr><th colspan="3">Curso</th> <th colspan="3">Professor</th></tr>';
+    let turma = turmas[t].getAlunos();
+    console.log(turma)
+    listaTurmas = listaTurmas + 
+    "<tr>"+
+    "<td colspan='3'>"+turmas[t].getCurso() +"</td>"+
+    "<td colspan='3'>"+turmas[t].getProfessor().getNome() +"</td>"+
+    "</tr>";
+    let lista = '';
+    lista += '<tr><th>Nome</th> <th>N1</th> <th>N2</th> <th>N3</th><th>Media</th> <th>Situação</th></tr>';
+    for (let i = 0; i < turma.length; i++) {
+      lista =
+        lista +
+        "<tr>"+
+        "<td>"+turma[i].getNome() +"</td>"+
+        "<td>"+turma[i].getNota1() +"</td>"+
+        "<td>"+turma[i].getNota2() +"</td>"+
+        "<td>"+turma[i].getNota3() +"</td>"+
+        "<td>"+turma[i].media.toFixed(2) +"</td>"+
+        "<td>"+turma[i].estado +"</td>"
+        "</tr>";
+    }
+    //lista += "</table>"
+    //document.getElementById('alunos').innerHTML = lista;
+    listaTurmas += lista+"<tr></tr>";
+}
+listaTurmas += "</table>"
+document.getElementById('alunos').innerHTML = listaTurmas;
 }
 
+static cadastrar() {
+  Interface.pegarElementos();
+  this.btnListar.classList.remove('active');
+  this.btnCadastrarTurma.classList.remove('active');
+  this.btnCadastrar.classList.add('active');  
+
+  // Ajusta o conteúdo visível
+  this.tabListar.classList.remove('active');
+  this.tabCadastrarTurma.classList.remove('active');
+  this.tabCadastrar.classList.add('active');
+  //document.getElementById("media").innerHTML = m;
+}
+
+static cadastrarTurma(){
+  Interface.pegarElementos();
+  this.btnListar.classList.remove('active');
+  this.btnCadastrarTurma.classList.add('active');
+  this.btnCadastrar.classList.remove('active');
+  
+  // Ajusta o conteúdo visível
+  this.tabListar.classList.remove('active');
+  this.tabCadastrarTurma.classList.add('active');
+  this.tabCadastrar.classList.remove('active');
 
 }
+
+static salvarTurma() {
+  const curso = document.getElementById('curso').value;
+  const nomeProf = document.getElementById('prof').value;
+  const mat = document.getElementById('mat').value;
+  const est = document.getElementById('est').value;
+  let prof = new Professor(nomeProf,mat,est);
+  const t1 = new Turma(curso, prof);
+  
+  //busca o select no HTML para inserir uma tuma como opção
+  const select = document.getElementById('turmaSelect');
+  const option = document.createElement('option');
+        
+        // Define o atributo 'value' e o texto visível
+        option.value = curso;
+        option.textContent = curso;
+        
+        // Adiciona a <option> dentro do <select>
+        select.appendChild(option);
+
+
+  alert('turma cadastrada');
+  return t1;
+}
+
+static pegarElementos(){
+  this.btnCadastrar = document.getElementById('btn-cadastrar');
+  this.tabCadastrar = document.getElementById('tab-cadastrar');
+  this.btnListar = document.getElementById('btn-listar');
+  this.tabListar = document.getElementById('tab-listar');
+  this.btnCadastrarTurma = document.getElementById('btn-cadastrar-turma');
+  this.tabCadastrarTurma = document.getElementById('tab-cadastrar-turma');
+}
+
+static pegarIndiceTurma(){
+  const selectTurma = document.getElementById('turmaSelect');
+  const indice = selectTurma.selectedIndex;
+  //const cursoAluno = selectTurma.options[indice].text;
+  return indice;
+}
+
+static pegarCursoSelecionado(){
+  const s = document.getElementById('turmaSelect');
+  const i = s.selectedIndex;
+  const cursoAluno = s.options[i].text;
+  return cursoAluno;
+}
+}//fim da classe

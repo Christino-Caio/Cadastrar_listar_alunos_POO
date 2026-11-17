@@ -3,74 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./TableStyle.css" />
+    <link rel="stylesheet" href="./tabStyle.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="Aluno.js"></script>
-    <script src="Pessoa.js"></script>
-    <script src="Professor.js"></script>
-    <script src="Turma.js"></script>
-    <!--<script src="./script.js"></script> -->
-    <script src="Interface.js"></script>
-    <script src="InterfaceTurma.js"></script>
-    <script src="main.js"></script>
-    
+    <script src="Pessoa.js" defer></script>
+    <script src="Professor.js" defer></script>
+    <script src="Aluno.js" defer></script>
+    <script src="Turma.js" defer></script>
+    <script src="Interface.js" defer></script>
+    <script src="main.js" defer></script>
     <title>Sistema Escolar</title>
-    
   </head>
   <body>
     <!-- Botões para trocar de aba -->
     <div class="tabs-container">
-      <button class="tab-button active" id="btn-cadastrar" onclick="Interface.cadastrar()">
-        Cadastrar
-      </button>
+      <button class="tab-button active" id="btn-cadastrar-turma" onclick="Interface.cadastrarTurma()">Cadastrar Turma</button>
+      <button class="tab-button" id="btn-cadastrar" onclick="Interface.cadastrar()">Cadastrar Aluno</button>
       <button class="tab-button" id="btn-listar" onclick="listarAluno()">
         Listar Alunos
       </button>
-      <button class="tab-button" id="btn-LisTur" onclick="listarTurma()">
-        Listar Cursos
-      </button>
+    </div>
+     <!-- Conteúdo da Aba 1: Cadastrar Turma-->
+     <div id="tab-cadastrar-turma" class="tab-content active">
+      Curso: <input id="curso" type="text" /> 
+      Professor: <input id="prof" type="text" /> 
+      Matricula: <input id="mat" type="text" /> 
+      Estado: <input id="est" type="text" /> 
+      <button onclick="btnSalvarTurma()" class="btn-salvar">Salvar Turma</button>
     </div>
 
-    <!-- Conteúdo da Aba 1: Cadastrar -->
-    <div id="tab-cadastrar" class="tab-content active">
-      Curso: <input id="curso" type="text">
-      Professor: <input id="professor" type="text"> 
-      Codigo de Turma: <input id="cdcurso" type="text">
-      <button onclick="btaSalTurma()" class="btn-salvar">Salvar Turma</button>
-      Nome do aluno: <input id="nome" type="text" /> 
-      Codig da Turma: <input id="aTurma" type="text">
-      Nota 1:
+    <!-- Conteúdo da Aba 2: Cadastrar -->
+    <div id="tab-cadastrar" class="tab-content">
+      Nome: <input id="nome" type="text" /> Nota 1:
       <input id="n1" type="text" /> Nota 2: <input id="n2" type="text" /> Nota
-      3: <input id="n3" type="text" /> Faltas: <input id="falta" type="text" />
-      <button onclick="botaoSalvar()" class="btn-salvar">Salvar Aluno</button>
+      3: <input id="n3" type="text" />
+      <select id="turmaSelect">
+        <option value="" disabled selected>Selecione uma opção...</option>
+      </select>
+      <button onclick="btnSalvarAluno()" class="btn-salvar">Salvar Aluno</button>
     </div>
 
-    <!-- Conteúdo da Aba 2: Listar -->
+    <!-- Conteúdo da Aba 3: Listar -->
     <div id="tab-listar" class="tab-content">
       <h3>Alunos Cadastrados</h3>
-        <button class="tab-button active" id="btn-MN" onclick="Interface.alterarNome()">
-          Mudar nome
-        </button>
-        <button class="tab-button active" id="btn-MM" onclick="Interface.mudarNota()">
-          Mudar nota
-        </button>
       <ul class="lista-alunos" id="alunos">
         <!-- O JavaScript vai colocar os alunos aqui depois -->
-        
         <li>Nenhum aluno cadastrado ainda.</li>
       </ul>
-      
     </div>
-
-    <!-- Conteudo da aba 3: Turmas -->
-    <div id="tab-classe" class="tab-content">
-      <h3>Turmas cadastradas</h3>
-     <!-- <button id="btn-listarTurmas" class="listar-turmas" onclick="listarpovo()">Cadastrar Alunos</button> -->
-        <ul class="Turma-lista" id="turmas">
-        <li>Nenhuma turma cadastrada ainda.</li>
-      </ul>  
-        
-    </div>
-    
   </body>
 </html>
