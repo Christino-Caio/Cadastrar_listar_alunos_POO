@@ -40,14 +40,14 @@ body {
 
 /* Regra principal das abas: Esconde por padrão */
 .tab-content {
-  display: none;
+  display: none; 
   flex-direction: column;
   gap: 12px;
 }
 
 /* Mostra apenas a aba que tiver a classe 'active' */
 .tab-content.active {
-  display: flex;
+  display: flex; 
 }
 
 /* Estilo dos inputs (mantido da etapa anterior) */
