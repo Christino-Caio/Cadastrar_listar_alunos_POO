@@ -12,13 +12,7 @@ class Pessoa{
         this.#estado = estado;
     }
 
-    constructor(nome){
-
-        this.#nome = nome;
-        this.#matricula = 1000;
-        this.#estado = 'ativo';
-
-    }
+    
 
     getNome(){
         return this.#nome;
